@@ -87,7 +87,6 @@ darkcolor = colors["dark" + settings["color"]]
 
 # loading used objects
 skull = pr.load_model(".\models\skull_simple_thin.obj")
-# material = pr.load_mate
 noosphere_font = pr.load_font(rf".\fonts\films.EXH.ttf")
 canticles_font = pr.load_font(rf".\fonts\films.EXL.ttf")
 broadcast_font = pr.load_font(rf".\fonts\setbackt.ttf")
