@@ -1,0 +1,4 @@
+backup/
+__pycache__/
+unused_files/
+transparent_scrolling_text.py
