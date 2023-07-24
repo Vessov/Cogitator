@@ -12,7 +12,7 @@ parser.add_argument("-c", choices=["teal", "navy", "green", "red", "white", "yel
                     nargs='?', const='teal')
 parser.add_argument("-f", action="store_true", help="select if the Cogitator should be displayed full screen (without the 1 pixel line around). Mutually exclusive with background transparency", 
                     dest="fullscreen")
-
+ 
 # parser.print_help()
 settings = vars(parser.parse_args())
 
