@@ -59,10 +59,10 @@ All awoken Machine Spirits chant binaric praises to
 Pull requests adding new Directives/Imperatives and Quotes are welcome, however please keep them in the tone that they are already at - quasi-canon for Quotes, and pseudo-code for Directives/Imperatives.\
 For any major changes in the architecture or rendering functions, as well as any problems encountered, please open issue.
 
-+++ Noospheric Broadcast ending +++\
-+++ Connection lost +++\
-+++ Machine Spirit falls to sleep again +++\
-+++ Ave Deus Mechanicus +++
+*+++ Noospheric Broadcast ending +++*\
+*+++ Connection lost +++*\
+*+++ Machine Spirit falls to sleep again +++*\
+*+++ Ave Deus Mechanicus +++*
 
 ## License
 
