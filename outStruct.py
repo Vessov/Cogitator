@@ -1,6 +1,7 @@
 import pyray as pr
 import textwrap
 import random, string
+import colorsys
 
 # output canticle rectangle with scrolling text
 class CanticleOutput:
@@ -349,6 +350,7 @@ class StatsOutput:
         self.monitor = pr.get_current_monitor()
         self.physical_width = pr.get_monitor_physical_width(self.monitor)
         self.physical_height = pr.get_monitor_physical_height(self.monitor)
+        self.wavelength = self.get_wavelength()
 
         # size and position variables
         self.rec_width = (self.midpoint - (self.midpoint - 200))*2
@@ -389,10 +391,24 @@ class StatsOutput:
         positions["size_var_vec"] = pr.Vector2(text_right_pos, text_up_pos + text_shift*2)
         positions["screens_label_vec"] = pr.Vector2(text_left_pos, text_up_pos + text_shift*3)
         positions["screens_var_vec"] = pr.Vector2(text_right_pos, text_up_pos + text_shift*3)
-        positions["volume_label_vec"] = pr.Vector2(text_left_pos, text_up_pos + text_shift*4)
-        positions["volume_var_vec"] = pr.Vector2(text_right_pos, text_up_pos + text_shift*4)
+        positions["wavelength_label_vec"] = pr.Vector2(text_left_pos, text_up_pos + text_shift*4)
+        positions["wavelength_var_vec"] = pr.Vector2(text_right_pos, text_up_pos + text_shift*4)
+        positions["volume_label_vec"] = pr.Vector2(text_left_pos, text_up_pos + text_shift*5)
+        positions["volume_var_vec"] = pr.Vector2(text_right_pos, text_up_pos + text_shift*5)
 
         return positions
+
+    def get_wavelength(self):
+        red = self.color[0] / 255
+        green = self.color[1] / 255
+        blue = self.color[2] / 255
+        if red == green == blue:
+            return "~"
+        else:
+            hsv = colorsys.rgb_to_hsv(red, green, blue)
+            hue = hsv[0] * 360
+            wvlength = int(650 - 250 / 270 * hue)
+            return wvlength
 
     def draw_stat_output(self, frametime):
 
@@ -411,6 +427,9 @@ class StatsOutput:
         screens_label = "Connected monitors:"
         screens_var = f"{pr.get_monitor_count()} pcs."
 
+        wavelength_label = "Display wavelength:"
+        wavelength_var = f"{self.wavelength} nm."
+
         main_stat_label_vec = self.positions["main_stat_label_vec"]
         stat_fps_label_vec = self.positions["stat_fps_label_vec"]
         stat_fps_vec = self.positions["stat_fps_vec"]
@@ -418,6 +437,8 @@ class StatsOutput:
         size_var_vec = self.positions["size_var_vec"]
         screens_label_vec = self.positions["screens_label_vec"]
         screens_var_vec = self.positions["screens_var_vec"]
+        wavelength_label_vec = self.positions["wavelength_label_vec"]
+        wavelength_var_vec = self.positions["wavelength_var_vec"]
 
 
         pr.draw_rectangle_rounded_lines(stat_rec, 0.1, 10, 2, self.color)
@@ -434,6 +455,10 @@ class StatsOutput:
         pr.draw_text_ex(self.broad_font, screens_label, screens_label_vec,
                         self.out_font_size, 2.0, self.color)
         pr.draw_text_ex(self.broad_font, screens_var, screens_var_vec,
+                        self.out_font_size, 2.0, self.color)
+        pr.draw_text_ex(self.broad_font, wavelength_label, wavelength_label_vec,
+                        self.out_font_size, 2.0, self.color)
+        pr.draw_text_ex(self.broad_font, wavelength_var, wavelength_var_vec,
                         self.out_font_size, 2.0, self.color)
 
 
