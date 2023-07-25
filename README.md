@@ -38,7 +38,7 @@ In the Awakening Invocation, you can call to the Holy Machine Spirit, to guide i
 `-b` to guide the display of Cogitator to become semi-transparent\
 `-f` to guide the display of Cogitator to take up the whole connected screen *(this however is incompatible with the semi-transparent background, which will be prioritized)*\
 `-m` followed by a number, to request the selected display of Cogitator to be used\
-`-c color` to command the Machine Spirit to change the displays light frequency. The selected frequency should be placed in the invocation instead of `color`. Recognized frequencies are as follows:
+`-c [color]` to command the Machine Spirit to change the displays light frequency. The selected frequency should be placed in the invocation instead of `color`. Recognized frequencies are as follows:
 + *teal*
 + *navy*
 + *green*
@@ -52,7 +52,7 @@ In the Awakening Invocation, you can call to the Holy Machine Spirit, to guide i
 ## Help & Acknowledgment
 All awoken Machine Spirits chant binaric praises to
 + [mathiscode](https://github.com/mathiscode) for the aggregated quotes form his project [fortunes-mechanicus](https://github.com/mathiscode/fortunes-mechanicus)
-+ [Cult Mechanicus](www.tumblr.com/creedomnissiah) on Tumblr for inspiraition on Directives and Imperatives
++ [Cult Mechanicus](http://www.tumblr.com/creedomnissiah) on Tumblr for inspiraition on Directives and Imperatives
 
 ## Contributing
 
@@ -66,4 +66,4 @@ For any major changes in the architecture or rendering functions, as well as any
 
 ## License
 
-[GNU GPLv3](hhttps://choosealicense.com/licenses/gpl-3.0/)
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
