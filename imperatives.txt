@@ -1,0 +1,174 @@
+
++Protector Imperative()+
+	{
+	//Smite them from afar
+	//bullet, beam, and blast
+	Optics.amplify();
+	Optics.overclock();
+	Optics.setRange(5-1000);
+	Arms.depress();
+	Hostiles=targetRoam();
+	while( Hostiles.count() != 0 )
+		{
+		targetLock();
+		execute();
+		}
+	}
+
+
++Aggressor Imperative(coord a)+
+	{
+	//None may stay our march
+	setWaypoint(a);
+	Legs.amplify();
+	Legs.reservePower();
+	Resp.overclock()
+	Floodstream.activate();
+	advance();
+	while( loc != a )
+		{
+		if( scanFor(obstruction) )
+			{
+			demolish();
+			}
+		}
+	holdPosition();
+	}
+
+
++Conquerer Imperative()+
+	{
+	//Cast them down with blade
+	//bludgeon, and boot
+	Optics.setRange(0-15);
+	Optics.overclock();
+	Wetware.overclock():
+	Floodstream.activate():
+	Arms.amplify();
+	Legs.brace();
+	Vitals.safeguard();
+	Hostiles=targetRoam();
+	while( Hostiles.count() != 0 )
+		{
+		targetLock();
+		execute();
+		}
+	}
+
+
++Bulwark Imperative()+
+	{
+	//Fear no bullet, no beam, no blade
+	//for the Machine God guards
+	//your body, mind, and soul
+	if( scanFor(cover) = null )
+		{
+		holdPosition;
+		}
+	else
+		{
+		cover();
+		Legs.brace();
+		Arms.brace();
+		Fields.amplify();
+		Vitals.safeguard();
+		pray();
+		}
+	}
+
+
++Kill Protocol(target a)+
+	{
+	//Slay all who threaten
+	//His Grand Design
+	while( a = null )
+		{
+		a=targetRoam();
+		}
+	a.targetLock();
+	execute();
+	}
+
+
++Expedited Purge Protocol()+
+	{
+	//Wipe them all out
+	Legs.amplify();
+	Legs.overclock();
+	Resp.overclock();
+	ReservePower.drain();
+	Arms.amplify();
+	while( Hostiles != inRange ):
+		{
+		Charge.activate();
+		}
+	a=targetRoam();
+	a.targetLock();
+	execute();
+	}
+
+
++Elimination Directive()+
+	{
+	//Engulf vulnerable systems
+	//in plasma and fire
+	Optics.amplify();
+	Optics.setRange(0-1000);
+	Arms.depress();
+	if( Hostiles == (inRange.half) ):
+		{
+		Weapons.amplify();
+		Weapons.overclock();
+		Weapons.setPenetration(MAX);
+		}
+	a=targetRoam();
+	targetRoam.seek(subSystem.vulnerable);
+	a.targetLock();
+	execute();
+	}
+
+
++Binharic Offense Directive()+
+	{
+	//Synchronize kill protocols
+	//Smite them all at once
+	Optics.amplify();
+	Weapons.amplify();
+	Legs.brace();
+	Floodstream.activate();
+	Noosphere.connect();
+	if(Noosphere.connectionEstablished):
+		{
+		x=Cohort.find();
+		syncCommand.send(x);
+		if( inSync(x) == True ):
+			{
+			Weapons.syncShot();
+			Weapons.syncTarget();
+			Weapons.syncPower();
+			Optics.syncRange();
+			}
+		a=targetRoam();
+		a.targetLock();
+		syncCommand.confirm(a);
+		execute();
+		}
+	}
+
+
++Clandestine Infiltration Directive()+
+	{
+	//Hide from the scanners
+	//Strike from the shadows
+	Cloaking.activate();
+	AuspexScramblers.overload();
+	Legs.amplify();
+	Floodstream.activate();
+	a = targetRoam();
+	a.targetLock();
+	while( loc != a.inRange ):
+		{
+		advance(a.coords);
+		}
+	holdPosition();
+	}
