@@ -37,8 +37,8 @@ In the Awakening Invocation, you can call to the Holy Machine Spirit, to guide i
 `-h` to get help from the Machine Spirit as to what calls will it answer\
 `-b` to guide the display of Cogitator to become semi-transparent\
 `-f` to guide the display of Cogitator to take up the whole connected screen *(this however is incompatible with the semi-transparent background, which will be prioritized)*\
-`-m` followed by a number, to request the selected display of Cogitator to be used\
-`-c [color]` to command the Machine Spirit to change the displays light frequency. The selected frequency should be placed in the invocation instead of `color`. Recognized frequencies are as follows:
+`-m` followed by a number, to request the selected display of Cogitator to be used *(this may result in display minimizing, use carefully)*\
+`-c` to command the Machine Spirit to change the displays light frequency. The selected frequency should be placed in the invocation after `-c`. Recognized frequencies are as follows:
 + *teal*
 + *navy*
 + *green*
