@@ -3,3 +3,4 @@ __pycache__
 sounds/
 unused_files/
 imperatives.txt
+.gitignore
