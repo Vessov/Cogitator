@@ -43,20 +43,26 @@ settings = vars(parser.parse_args())
 
 # silence the logger output to only warnings
 pr.set_trace_log_level(pr.TraceLogLevel.LOG_WARNING)
-# set the standard config flags
-pr.set_config_flags(pr.ConfigFlags.FLAG_WINDOW_TOPMOST)
-pr.set_config_flags(pr.ConfigFlags.FLAG_WINDOW_UNDECORATED)
 
 # this flag has to be set before the window initialization
 if settings["background"] is False:
     pr.set_config_flags(pr.ConfigFlags.FLAG_WINDOW_TRANSPARENT)
 
+# set the standard config flags
+pr.set_config_flags(pr.ConfigFlags.FLAG_WINDOW_TOPMOST)
+pr.set_config_flags(pr.ConfigFlags.FLAG_WINDOW_UNDECORATED)
+
 # window initialization
 pr.init_window(10, 10, "Sanctified Cogitator")
 pr.set_window_position(0, 0)
 pr.set_target_fps(60)
-if settings["monitor"] != 0:
-    pr.set_window_monitor(settings["monitor"])
+
+pos = pr.get_monitor_position(settings["monitor"])
+pr.set_window_position(int(pos.x), int(pos.y))
+
+# if settings["monitor"] != 0:
+#     pos = pr.get_monitor_position(settings["monitor"])
+#     pr.set_window_position(pos.x, pos.y)
 
 # getting the screen dimensions
 screen_height = pr.get_monitor_height(settings["monitor"])
@@ -64,13 +70,12 @@ screen_width = pr.get_monitor_width(settings["monitor"])
 
 # this flag has to be set after window initialization, since it relies on screen size
 if settings["fullscreen"] is True and not settings["background"] is False:
-    pr.set_config_flags(pr.ConfigFlags.FLAG_FULLSCREEN_MODE)
     pr.set_window_size(screen_width, screen_height)
 
 else:
     # position set with 1 pixel difference, due to raylib defaulting to fullscreen
     # if the dimensions are the same as screen size; fullscreen prevents window transparency
-    pr.set_window_position(1, 1)
+    pr.set_window_position(int(pos.x) + 1, int(pos.y) + 1)
     pr.set_window_size(screen_width - 1, screen_height - 1)
 
 # disabling and hiding cursor
