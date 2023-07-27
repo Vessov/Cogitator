@@ -47,6 +47,10 @@ In the Awakening Invocation, you can call to the Holy Machine Spirit, to guide i
 + *yellow*
 
 \
+
+As of now, the Machine Spirit should be fully awakened:
+![](https://github.com/Vessov/Cogitator/blob/main/Cogitator.gif)
+
 *++ Loading linked consciousnesses... ++*
 
 ## Help & Acknowledgment
