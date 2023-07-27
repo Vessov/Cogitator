@@ -415,10 +415,13 @@ class StatsOutput:
         return positions
 
     def get_wavelength(self):
+        # based on RGB values passed as color, calculate closest light wavelength
         red = self.color[0] / 255
         green = self.color[1] / 255
         blue = self.color[2] / 255
         if red == green == blue:
+            # since white light contains full spectrum of wavelengths,
+            # display ~ symbol to avoid defaulting to max value (650nm)
             return "~"
         else:
             hsv = colorsys.rgb_to_hsv(red, green, blue)
